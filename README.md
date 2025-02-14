@@ -41,7 +41,7 @@ MFA helps organizations meet compliance requirements and security standards by i
 
 ## Download
 
-Download the latest installer (`.msi`) version from [Release](https://github.com/Ironchip-Security/Ironchip-Windows/releases)
+Download the latest installer (`.msi`) version from [Release](https://github.com/Ironchip-Security/Ironchip-Windows/releases).
 
 ### Requirements
 To run the .msi file, the Microsoft Visual C++ Redistributable must be installed. You can download it from the [official Microsoft website](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170).
