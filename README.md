@@ -11,7 +11,7 @@
 
 ## IDENTITY PROTECTION
 
-Elevate your cybersecurity strategy with Ironchip Identity Platform, designed to bring the power of Multi-Factor Authentication (MFA) to your desktop computing environment. [Know more](https://www.ironchip.com/en/identity-platform).
+Elevate your cybersecurity strategy with Ironchip Identity Platform, designed to bring the power of Multi-Factor Authentication (MFA) to your desktop computing environment. [Know more](https://www.ironchip.com/en/mobileless-authentication).
 
 **Role-based privilege management:**
 Set different user privileges. Prevents unauthorized users from accessing the rest of the system and misusing information, mitigating malicious users.
