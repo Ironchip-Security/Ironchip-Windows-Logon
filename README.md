@@ -4,10 +4,20 @@
 <h1 align="center">Ironchip Windows Logon</h1>
 
 <p align="center" back>
-    <a href="https://www.microsoft.com/software-download/">
+  <a href="https://www.microsoft.com/software-download/">
     <img alt="Latest release" src="https://img.shields.io/badge/Windows-0078D6?logo=windows"/>
   </a>
+  <a href="https://github.com/Ironchip-Security/Ironchip-Windows-Logon/releases/latest">
+    <img alt="Latest release" src="https://img.shields.io/github/v/release/Ironchip-Security/Ironchip-Windows-Logon?color=green"/>
+  </a>
+  <a href="https://github.com/Ironchip-Security/Ironchip-Windows-Logon/releases/latest">
+    <img alt="Release date" src="https://img.shields.io/github/release-date/Ironchip-Security/Ironchip-Windows-Logon?color=orange"/>
+  </a>
 </p>
+<p align="center" back>
+  <img alt="Latest release" src="https://img.shields.io/badge/GUID-%7BD2CBBFE7--22CC--4FF0--A7C4--8FCDCFB141B7%7D-white"/>
+</p>
+
 
 ## IDENTITY PROTECTION
 
@@ -39,9 +49,9 @@ MFA adds an extra layer of protection, requiring multiple forms of authenticatio
 **Improved Compliance:**
 MFA helps organizations meet compliance requirements and security standards by implementing robust authentication methods.
 
-   <p align="center">
-     <video alt="Logon video showcase" src="./assets/logon-video-showcase.mp4" width="350"/>
-   </p>
+  <p align="center">
+     <img alt="Term os Use" src="./assets/logon-video-showcase.gif" width="350"/>
+  </p>
 
 
 ## Download
@@ -55,7 +65,7 @@ To install Ironchip Windows Logon into your device:
    <p align="center">
      <img alt="Installer first view" src="./assets/first-view.png" width="350"/>
    </p>
- 2) Read and accept the Term of Use.
+ 2) Read and accept the Terms of Use.
     <p align="center">
      <img alt="Term os Use" src="./assets/accept-terms-of-use.png" width="350"/>
    </p>
@@ -66,7 +76,7 @@ To install Ironchip Windows Logon into your device:
      <img alt="Configuration view" src="./assets/configuration-view.png" width="350"/>
    </p>
 
-  > I case your Ironchip company is in an other environment, make sure to update the host in orther target the expected endpoints (*e.g https://testing.api.ironchip.com* is the host for the testing environment).
+  > I case your Ironchip company is in another environment, make sure to update the host in order to target the expected endpoints (*e.g https://testing.api.ironchip.com* is the host for the testing environment).
 
  4) On the next step you can enable additional features.
     
@@ -76,7 +86,7 @@ To install Ironchip Windows Logon into your device:
      <img alt="Additional Configuration view" src="./assets/additional-configuration-view.png" width="350"/>
    </p>
 
- 5) On this view, you can select in wich scenarios you want Ironchip credential provider to be applied.
+ 5) On this view, you can select in which scenarios you want Ironchip credential provider to be applied.
   
     #### Scenarios
       - **Logon:** Scenario to access the workstation either using logon or unlock.
@@ -86,7 +96,7 @@ To install Ironchip Windows Logon into your device:
 
     #### Selectable values
       - **None:** Disables Ironchip credential provider.
-      - **Local:** Apply Ironchip credential when accessing the machine locally.
+      - **Local:** Apply Ironchip credential when accessing the machine localy.
       - **Remote:** Apply Ironchip credential when accessing the machine remotely (RDP).
       - **Exclude other providers:** Only allow the use of Ironchip, disable any other credential provider.
 
@@ -113,7 +123,7 @@ The installation of Ironchip Windows Logon using commands (cmd) with the program
 
     > Replace `Path\To\IronchipWindowsLogon.msi` with the full path and name of the MSI file. 
     
-    > The only required values is `IRONCHIP_SECRET` any other values is only required if you want to modify the default values
+    > The only required value is `IRONCHIP_SECRET`. Other values are optional and only needed to modify the defaults.
 
     **Scenario values [0|1|2|3][e|d]**
     - **0:** Apply Ironchip credential when accessing the machine localy and remotely
@@ -126,7 +136,7 @@ The installation of Ironchip Windows Logon using commands (cmd) with the program
 4) Wait for it to finish:
     - The installation process may take some time. Stay in the command line until you see the prompt indicating that the installation is complete.
 
-## How do i get my ApiKey?
+## How do I get my ApiKey?
 ### Requirements
 
 1) Have a company created on the Ironchip Dashboard. If you don't have an Ironchip Company yet, feel free to [check it out](https://www.ironchip.com/en/identity-platform)
@@ -142,12 +152,23 @@ The installation of Ironchip Windows Logon using commands (cmd) with the program
      <img alt="Dashboard applications navigation" src="./assets/dashboard-applications.png" width="350"/>
    </p>
 
-3) Click on the **New Application** button and a new modal will be displayed. Fill the name and select **APIKEY** as the integration.
+3) Click on the **New Application** button and a new modal will be displayed. 
+
    <p align="center">
      <img alt="Dashboard new application modal" src="./assets/new-application.png" width="350"/>
    </p>
 
-4) Wait for the creation of the application. If able to generate the application, a new modal should show providing the apikey (only shows at this point, make sure to save it for later use) needed for the Ironchip Windows Logon.
+4) Select the **Windows Logon** application integration.
+   <p align="center">
+     <img alt="Dashboard select application modal" src="./assets/select-application.png" width="350"/>
+   </p>
+
+5) Fill the fields with the desired name (you can also customize the icon).
+   <p align="center">
+     <img alt="Dashboard fill application modal" src="./assets/fill-application.png" width="350"/>
+   </p>
+
+4) Wait for the creation of the application. If able to generate the application, a new modal should show providing the apikey needed for the Ironchip Windows Logon (only shown at this point, make sure to save it for later use) .
    <p align="center">
      <img alt="Dashboard apikey modal" src="./assets/apikey.png" width="350"/>
    </p>
@@ -168,8 +189,33 @@ The installation of Ironchip Windows Logon using commands (cmd) with the program
      <img alt="Dashboard applications navigation" src="./assets/dashboard-applications.png" width="350"/>
    </p>
 
-3) Click on the **Options** button and select **Add Access** and a new modal will be displayed. Fill the values of each step.
+3) Click on the **Options** button and select **Add Access** and a new modal will be displayed. Fill the fields in each step.
    <p align="center">
      <img alt="Dashboard new application modal" src="./assets/add-access.png" width="350"/>
    </p>
 > As a username, setup the same value the user will use to login into the Windows device.
+
+## Additional configurations
+
+## Exclude users
+You can exclude users from being required to perform Ironchip authorization during login. To do so, go to the registry path: `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{D2CBBFE7-22CC-4FF0-A7C4-8FCDCFB141B7}`
+
+Add the usernames to the `ironchipExcludedUsers` entry.
+> The format of the users exluded must be *MACHINE\User* or *DOMAIN\User* (make sure to jump line between users)
+   <p align="center">
+     <img alt="Dashboard new application modal" src="./assets/exclude-users.png" width="350"/>
+   </p>
+
+### Autologon
+
+If you’ve configured auto-login using Sysinternals [Autologon](https://learn.microsoft.com/en-us/sysinternals/downloads/autologon), and you don't exclude other providers, the default provider will be displayed. So in that case, if you want ironchip to be selected as the provider to use go to the policy `Local Group Policy Edit > ` and paste the Ironchip Logon GUID
+
+1) Use the key shortcut `⊞ Win + R` and paste `gpedit.msc`
+   <p align="center">
+     <img alt="Open local group policy editor" src="./assets/open-local-group-policy-editor.png" width="350"/>
+   </p>
+
+2) Then inside the Local Group Policy Editor go to `Local Computer Policy > Computer Configuration > Administrative Templates > System > Logon > Assign a default credential providers`
+   <p align="center">
+     <img alt="Configure local group policy editor" src="./assets/configure-local-group-policy-editor.png" width="350"/>
+   </p>
