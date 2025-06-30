@@ -39,15 +39,14 @@ MFA adds an extra layer of protection, requiring multiple forms of authenticatio
 **Improved Compliance:**
 MFA helps organizations meet compliance requirements and security standards by implementing robust authentication methods.
 
+   <p align="center">
+     <video alt="Logon video showcase" src="./assets/logon-video-showcase.mp4" width="350"/>
+   </p>
+
+
 ## Download
 
-Download the latest installer (`.msi`) version from [Release](https://github.com/Ironchip-Security/Ironchip-Windows/releases).
-
-### Requirements
-To run the .msi file, the Microsoft Visual C++ Redistributable must be installed. You can download it from the [official Microsoft website](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170).
-
-Download the appropriate .exe file for your system architecture.
-Run the installer and follow the on-screen instructions.
+Download the latest installer (`.msi`) version from [Release](hhttps://github.com/Ironchip-Security/Ironchip-Windows-Logon/releases).
 
 ### Installation process using UI
 
@@ -56,8 +55,12 @@ To install Ironchip Windows Logon into your device:
    <p align="center">
      <img alt="Installer first view" src="./assets/first-view.png" width="350"/>
    </p>
- 
- 2) Follow the installation steps until you arrive to the **Ironchip Configuration View**. You must provide a valid **APIKEY** generated from the [Ironchip Dashboard](https://app.ironchip.com/).
+ 2) Read and accept the Term of Use.
+    <p align="center">
+     <img alt="Term os Use" src="./assets/accept-terms-of-use.png" width="350"/>
+   </p>
+
+ 3) Follow the installation steps until you arrive to the **Ironchip Configuration View**. You must provide a valid **APIKEY** generated from the [Ironchip Dashboard](https://app.ironchip.com/).
 
    <p align="center">
      <img alt="Configuration view" src="./assets/configuration-view.png" width="350"/>
@@ -65,16 +68,15 @@ To install Ironchip Windows Logon into your device:
 
   > I case your Ironchip company is in an other environment, make sure to update the host in orther target the expected endpoints (*e.g https://testing.api.ironchip.com* is the host for the testing environment).
 
- 3) On the next step you can enable additional features.
+ 4) On the next step you can enable additional features.
     
     - **Remember user:** Enable during the windows login a feature that allows to remember password for future logins.
-    - **UPN:** Make sure to enable this if you device is configured to folow this format. If not keep it uncheck.
    
    <p align="center">
      <img alt="Additional Configuration view" src="./assets/additional-configuration-view.png" width="350"/>
    </p>
 
- 4) On this view, you can select in wich scenarios you want Ironchip credential provider to be applied.
+ 5) On this view, you can select in wich scenarios you want Ironchip credential provider to be applied.
   
     #### Scenarios
       - **Logon:** Scenario to access the workstation either using logon or unlock.
@@ -106,7 +108,7 @@ The installation of Ironchip Windows Logon using commands (cmd) with the program
     - The basic command to install an MSI file is as follows:
 
     ```bash
-    msiexec.exe /i Path\To\IronchipWindowsLogon.msi IRONCHIP_SECRET="$apikey" IRONCHIP_URL="https://api.ironchip.com" IRONCHIP_REMEMBER_CREDENTIALS="1" IRONCHIP_UPNFORMAT="0" CPUS_LOGON="3d" CPUS_UNLOCK="3d" CPUS_CREDUI="3d" CPUS_CHANGE_PASSWORD="3d"  /q
+    msiexec.exe /i C:\IronchipWindowsLogon.msi IRONCHIP_SECRET="$api_key" IRONCHIP_REMEMBER_CREDENTIALS="1" CPUS_LOGON="0d" CPUS_UNLOCK="0d" CPUS_CREDUI="0d" CPUS_CHANGE_PASSWORD="0d"  /q
     ```
 
     > Replace `Path\To\IronchipWindowsLogon.msi` with the full path and name of the MSI file. 
