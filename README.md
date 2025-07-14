@@ -202,14 +202,19 @@ The installation of Ironchip Windows Logon using commands (cmd) with the program
 
 ## One Time Password
 To configure the OTP for a user, you nned to log into that user and execute the `Ironchip Offline Setup` shortcut:
+
    <p align="center">
      <img alt="OTP shortcut" src="./assets/OTP-shortcut.png" width="70"/>
    </p>
+
 This will open a the OTP setup process
+
    <p align="center">
      <img alt="OTP shortcut" src="./assets/OTP-page.png" width="350"/>
    </p>
+
 continue with it until you arrive to the QR. Make sure to save the QR since it's how the user will be able to login to the account when there is no internet connection.
+
    <p align="center">
      <img alt="OTP shortcut" src="./assets/OTP-QR.png" width="350"/>
    </p>
