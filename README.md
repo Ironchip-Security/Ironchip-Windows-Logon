@@ -7,13 +7,16 @@
   <a href="https://www.microsoft.com/software-download/">
     <img alt="Latest release" src="https://img.shields.io/badge/Windows-0078D6?logo=windows"/>
   </a>
+  
   <a href="https://github.com/Ironchip-Security/Ironchip-Windows-Logon/releases/latest">
     <img alt="Latest release" src="https://img.shields.io/github/v/release/Ironchip-Security/Ironchip-Windows-Logon?color=green"/>
   </a>
+  
   <a href="https://github.com/Ironchip-Security/Ironchip-Windows-Logon/releases/latest">
     <img alt="Release date" src="https://img.shields.io/github/release-date/Ironchip-Security/Ironchip-Windows-Logon?color=orange"/>
   </a>
 </p>
+
 <p align="center" back>
   <img alt="Latest release" src="https://img.shields.io/badge/GUID-%7BD2CBBFE7--22CC--4FF0--A7C4--8FCDCFB141B7%7D-white"/>
 </p>
@@ -197,6 +200,20 @@ The installation of Ironchip Windows Logon using commands (cmd) with the program
 
 ## Additional configurations
 
+## One Time Password
+To configure the OTP for a user, you nned to log into that user and execute the `Ironchip Offline Setup` shortcut:
+   <p align="center">
+     <img alt="OTP shortcut" src="./assets/OTP-shortcut.png" width="350"/>
+   </p>
+This will open a the OTP setup process
+   <p align="center">
+     <img alt="OTP shortcut" src="./assets/OTP-page.png" width="350"/>
+   </p>
+continue with it until you arrive to the QR. Make sure to save the QR since it's how the user will be able to login to the account when there is no internet connection.
+   <p align="center">
+     <img alt="OTP shortcut" src="./assets/OTP-QR.png" width="350"/>
+   </p>
+   
 ## Exclude users
 You can exclude users from being required to perform Ironchip authorization during login. To do so, go to the registry path: `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{D2CBBFE7-22CC-4FF0-A7C4-8FCDCFB141B7}`
 
