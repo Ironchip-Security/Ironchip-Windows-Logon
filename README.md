@@ -59,7 +59,20 @@ MFA helps organizations meet compliance requirements and security standards by i
 
 ## Download
 
-Download the latest installer (`.msi`) version from [Release](hhttps://github.com/Ironchip-Security/Ironchip-Windows-Logon/releases).
+Download the latest installer (`.msi`) version from [Release](https://github.com/Ironchip-Security/Ironchip-Windows-Logon/releases).
+
+### Basic Usage
+Once you've downloaded the installer:
+
+#### GUI Installation
+
+1. Run the `.msi` installer.
+2. Enable the features you need:
+   - **Ironchip Windows Logon** for secure login.
+   - *(Optional)* **Offline** for no-internet login.
+   - *(Optional)* **Remember Credentials** to cache passwords.
+3. Enter your `ApiKey` when prompted.
+4. Finish setup and assign user access from the [Ironchip Dashboard](https://app.ironchip.com).
 
 ### Installation process using UI
 
