@@ -61,7 +61,7 @@ MFA helps organizations meet compliance requirements and security standards by i
 Download the latest (`.msi`) installer:
 
 <p align="left">
-  <a href="https://github.com/Ironchip-Security/Ironchip-Windows/releases/latest/download/IronchipWindowsLogon.msi">
+  <a href="https://github.com/Ironchip-Security/Ironchip-Windows-Logon/releases/latest/download/IronchipWindowsLogon_x64.msi">
     <img alt="Download Ironchip Installer" src="https://custom-icon-badges.demolab.com/badge/-Download%20Installer-blue?style=for-the-badge&logo=download&logoColor=white">
   </a>
 </p>
