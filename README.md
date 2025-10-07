@@ -259,3 +259,19 @@ If you’ve configured auto-login using Sysinternals [Autologon](https://learn.m
    <p align="center">
      <img alt="Configure local group policy editor" src="./assets/configure-local-group-policy-editor.png" width="350"/>
    </p>
+
+### Logs
+
+The Ironchip Credential Provider generates diagnostic and operational logs to help with monitoring and troubleshooting. These logs are written to the Windows Event Viewer under Applications and Services Logs → [YourCompanyName] → CredentialProvider.
+
+To view the logs:
+1) Open Event Viewer (eventvwr.msc).
+2) Navigate to `Windows logs>Applications`.
+3) Look for logs comming from `IronchipLogon` and `Ironchip OTP Service`
+
+#### Changing the Log Level
+The log verbosity can be configured through the provider’s configuration registry `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{D2CBBFE7-22CC-4FF0-A7C4-8FCDCFB141B7}` you can modify the value of `logLevel` with the values:
+ - `error` – Logs only error events.
+ - `warning` – Logs warnings and errors.
+ - `info` – Logs general operational information, warnings, and errors.
+ - `debug` – Logs detailed diagnostic information. **Not recommended** for regular use, as it can quickly fill the Event Viewer due to the volume of data. Use this level only when lower levels do not provide sufficient details for troubleshooting.
