@@ -275,3 +275,10 @@ The log verbosity can be configured through the provider’s configuration regis
  - `warning` – Logs warnings and errors.
  - `info` – Logs general operational information, warnings, and errors.
  - `debug` – Logs detailed diagnostic information. **Not recommended** for regular use, as it can quickly fill the Event Viewer due to the volume of data. Use this level only when lower levels do not provide sufficient details for troubleshooting.
+
+## Compatibility with Older Versions
+Starting from `v2.1.2`, communications have been migrated from *Schannel* to *OpenSSL*, improving compatibility with older Windows versions (primarily targeting Windows 8, though not limited to it).
+
+However, since our backend uses an SSL certificate signed by **Let’s Encrypt**, and Let’s Encrypt’s root certificate was **not included in Windows default trusted CA store until Windows 10**, users running earlier versions of Windows will need to manually add the Let’s Encrypt root certificate to their trusted certificate authorities.
+
+You can download the required Let’s Encrypt root certificate in their [Documentation](https://letsencrypt.org/certificates/).
