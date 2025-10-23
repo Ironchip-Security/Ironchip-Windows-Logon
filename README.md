@@ -282,3 +282,5 @@ Starting from `v2.1.2`, communications have been migrated from *Schannel* to *Op
 However, since our backend uses an SSL certificate signed by **Let’s Encrypt**, and Let’s Encrypt’s root certificate was **not included in Windows default trusted CA store until Windows 10**, users running earlier versions of Windows will need to manually add the Let’s Encrypt root certificate to their trusted certificate authorities.
 
 You can download the required Let’s Encrypt root certificate in their [Documentation](https://letsencrypt.org/certificates/).
+
+▶️ [Watch a video for a more detailed guide on how to download the certificate](assets/windows8-cert-install.mp4)
