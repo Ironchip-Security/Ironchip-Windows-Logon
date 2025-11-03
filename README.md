@@ -306,7 +306,7 @@ With this setup, the authorization to the Ironchip backend still uses the SAMAcc
    </p>
 
 ## Compatibility with Older Versions
-Starting from `v2.1.2`, communications have been migrated from *Schannel* to *OpenSSL*, improving compatibility with older Windows versions (primarily targeting Windows 8, though not limited to it).
+Starting from `v2.2.0`, communications have been migrated from *Schannel* to *OpenSSL*, improving compatibility with older Windows versions (primarily targeting Windows 8, though not limited to it).
 
 However, since our backend uses an SSL certificate signed by **Let’s Encrypt**, and Let’s Encrypt’s root certificate was **not included in Windows default trusted CA store until Windows 10**, users running earlier versions of Windows will need to manually add the Let’s Encrypt root certificate to their trusted certificate authorities.
 
