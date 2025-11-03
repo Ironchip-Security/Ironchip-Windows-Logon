@@ -90,8 +90,16 @@ To install Ironchip Windows Logon into your device:
     <p align="center">
      <img alt="Term os Use" src="./assets/accept-terms-of-use.png" width="350"/>
    </p>
+ 3) Select the features you want to enable.
 
- 3) Follow the installation steps until you arrive to the **Ironchip Configuration View**. You must provide a valid **APIKEY** generated from the [Ironchip Dashboard](https://app.ironchip.com/).
+   - **Ironchip Windows Logon** for secure login.
+   - *(Optional)* **Offline** for no-internet login.
+
+   <p align="center">
+     <img alt="Select features" src="./assets/feature-selection-view.png" width="350"/>
+   </p>
+
+ 4) Provide the valid credentials generated through the **Ironchip Dashboard**. Ensure you target the correct host environment (if using production, leave the field unchanged). Additionally, provide a valid APIKEY generated from the [Ironchip Dashboard](https://app.ironchip.com/).
 
    <p align="center">
      <img alt="Configuration view" src="./assets/configuration-view.png" width="350"/>
@@ -99,7 +107,7 @@ To install Ironchip Windows Logon into your device:
 
   > I case your Ironchip company is in another environment, make sure to update the host in order to target the expected endpoints (*e.g https://testing.api.ironchip.com* is the host for the testing environment).
 
- 4) On the next step you can enable additional features.
+ 5) On the next step you can enable additional features.
     
     - **Remember user:** Enable during the windows login a feature that allows to remember password for future logins.
    
@@ -107,7 +115,7 @@ To install Ironchip Windows Logon into your device:
      <img alt="Additional Configuration view" src="./assets/additional-configuration-view.png" width="350"/>
    </p>
 
- 5) On this view, you can select in which scenarios you want Ironchip credential provider to be applied.
+ 6) On this view, you can select in which scenarios you want Ironchip credential provider to be applied.
   
     #### Scenarios
       - **Logon:** Scenario to access the workstation either using logon or unlock.
@@ -125,7 +133,13 @@ To install Ironchip Windows Logon into your device:
      <img alt="Additional Configuration view" src="./assets/scenarios-view.png" width="350"/>
    </p>
 
-  - Once the installation process is finished. Make sure to add the according access to the Ironchip Dashboard in order to be able to access the device.
+  7) Finally, click the Install button to complete the setup.
+
+   <p align="center">
+     <img alt="Install view" src="./assets/install-view.png" width="350"/>
+   </p>
+
+  > Once the installation process is finished. Make sure to add the according access to the Ironchip Dashboard in order to be able to access the device.
 
 ### Installation process using CLI
 The installation of Ironchip Windows Logon using commands (cmd) with the program "msiexec.exe." Here’s a basic tutorial on how to do it:
@@ -176,22 +190,22 @@ The installation of Ironchip Windows Logon using commands (cmd) with the program
 3) Click on the **New Application** button and a new modal will be displayed. 
 
    <p align="center">
-     <img alt="Dashboard new application modal" src="./assets/new-application.png" width="350"/>
+     <img alt="Dashboard new application modal" src="./assets/new-application.png" width="550"/>
    </p>
 
 4) Select the **Windows Logon** application integration.
    <p align="center">
-     <img alt="Dashboard select application modal" src="./assets/select-application.png" width="350"/>
+     <img alt="Dashboard select application modal" src="./assets/select-application.png" width="550"/>
    </p>
 
 5) Fill the fields with the desired name (you can also customize the icon).
    <p align="center">
-     <img alt="Dashboard fill application modal" src="./assets/fill-application.png" width="350"/>
+     <img alt="Dashboard fill application modal" src="./assets/fill-application.png" width="550"/>
    </p>
 
 4) Wait for the creation of the application. If able to generate the application, a new modal should show providing the apikey needed for the Ironchip Windows Logon (only shown at this point, make sure to save it for later use) .
    <p align="center">
-     <img alt="Dashboard apikey modal" src="./assets/apikey.png" width="350"/>
+     <img alt="Dashboard apikey modal" src="./assets/apikey.png" width="550"/>
    </p>
 
 ## How to give access?
@@ -218,13 +232,14 @@ The installation of Ironchip Windows Logon using commands (cmd) with the program
 
 ## Additional configurations
 
-## One Time Password
+### One Time Password
 To configure the OTP for a user, you nned to log into that user and execute the `Ironchip Offline Setup` shortcut:
 
    <p align="center">
      <img alt="OTP shortcut" src="./assets/OTP-shortcut.png" width="70"/>
    </p>
 
+> You can also access the Offline setup by pasting `localhost:10000` on a browser
 This will open a the OTP setup process
 
    <p align="center">
@@ -237,7 +252,7 @@ continue with it until you arrive to the QR. Make sure to save the QR since it's
      <img alt="OTP shortcut" src="./assets/OTP-QR.png" width="350"/>
    </p>
    
-## Exclude users
+### Exclude users
 You can exclude users from being required to perform Ironchip authorization during login. To do so, go to the registry path: `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{D2CBBFE7-22CC-4FF0-A7C4-8FCDCFB141B7}`
 
 Add the usernames to the `ironchipExcludedUsers` entry.
@@ -255,7 +270,7 @@ If you’ve configured auto-login using Sysinternals [Autologon](https://learn.m
      <img alt="Open local group policy editor" src="./assets/open-local-group-policy-editor.png" width="350"/>
    </p>
 
-2) Then inside the Local Group Policy Editor go to `Local Computer Policy > Computer Configuration > Administrative Templates > System > Logon > Assign a default credential providers`
+2) Then inside the Local Group Policy Editor go to `Local Computer Policy > Computer Configuration > Administrative Templates > System > Logon > Assign a default credential providers` and paste the Provider GUID: `{D2CBBFE7-22CC-4FF0-A7C4-8FCDCFB141B7}`
    <p align="center">
      <img alt="Configure local group policy editor" src="./assets/configure-local-group-policy-editor.png" width="350"/>
    </p>
@@ -275,6 +290,20 @@ The log verbosity can be configured through the provider’s configuration regis
  - `warning` – Logs warnings and errors.
  - `info` – Logs general operational information, warnings, and errors.
  - `debug` – Logs detailed diagnostic information. **Not recommended** for regular use, as it can quickly fill the Event Viewer due to the volume of data. Use this level only when lower levels do not provide sufficient details for troubleshooting.
+
+### Enforce external username
+
+By default, the Ironchip credential provider handles all logins using the **SAMAccount format** (e.g., `Domain\User` or `Machine\User`). If you need to use a different login format—for example, when using Citrix—you can configure an external username through the Ironchip Dashboard. This external username will be used after a successful authentication.
+
+With this setup, the authorization to the Ironchip backend still uses the SAMAccount format. However, Ironchip Logon will take the returned external username from the request and use it as the credential to continue the login process.
+
+ - Example:
+
+    You can configure an access alias like `mycompany\example` and an external username `example@mycompany.local`. Users will log in using `mycompany\example`, and after successful authorization, Ironchip Logon will use `example@mycompany.local` as the credential for Windows login.
+  
+  <p align="center">
+     <img alt="Configure alias" src="./assets/configure-alias.png" width="550"/>
+   </p>
 
 ## Compatibility with Older Versions
 Starting from `v2.1.2`, communications have been migrated from *Schannel* to *OpenSSL*, improving compatibility with older Windows versions (primarily targeting Windows 8, though not limited to it).
