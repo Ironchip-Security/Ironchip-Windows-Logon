@@ -47,7 +47,7 @@ Logon is a custom Windows credential provider designed by [Ironchip](https://www
 Our simplified access can enhance user experience, making it more convenient and user-friendly. This is especially valuable in a work or personal environment where you're required to log in to various systems multiple times a day.
 
 **Extra Layer:**
-MFA adds an extra layer of protection, requiring multiple forms of authentication, such as a password and a one-time code or push notification. 
+MFA adds an extra layer of protection, requiring multiple forms of authentication, such as a password and a one-time code, sms code or push notification. 
 
 **Improved Compliance:**
 MFA helps organizations meet compliance requirements and security standards by implementing robust authentication methods.
@@ -86,14 +86,16 @@ To install Ironchip Windows Logon into your device:
    <p align="center">
      <img alt="Installer first view" src="./assets/first-view.png" width="350"/>
    </p>
+
  2) Read and accept the Terms of Use.
     <p align="center">
      <img alt="Term os Use" src="./assets/accept-terms-of-use.png" width="350"/>
    </p>
+
  3) Select the features you want to enable.
 
-   - **Ironchip Windows Logon** for secure login.
-   - *(Optional)* **Offline** for no-internet login.
+    - **Ironchip Windows Logon** MFA for secure login.
+    - *(Optional)* **Offline** uses OTP codes for MFA. Required to authenticate without internet connection.
 
    <p align="center">
      <img alt="Select features" src="./assets/feature-selection-view.png" width="350"/>
@@ -105,9 +107,15 @@ To install Ironchip Windows Logon into your device:
      <img alt="Configuration view" src="./assets/configuration-view.png" width="350"/>
    </p>
 
-  > I case your Ironchip company is in another environment, make sure to update the host in order to target the expected endpoints (*e.g https://testing.api.ironchip.com* is the host for the testing environment).
+  > In case your Ironchip company is in another environment, make sure to update the host in order to target the expected endpoints (*e.g https://testing.api.ironchip.com* is the host for the testing environment).
 
- 5) On the next step you can enable additional features.
+ 5) *(Optional)* Click the `Validate` button to check your configuration. You’ll need an internet connection for this step. If you’re installing offline, you can skip it. If everything is set up correctly, you’ll see a message like the one below.
+   
+   <p align="center">
+     <img alt="Additional Configuration view" src="./assets/validated-configuration.png" width="350"/>
+   </p>
+
+ 6) On the next step you can enable additional features.
     
     - **Remember user:** Enable during the windows login a feature that allows to remember password for future logins.
    
@@ -115,7 +123,7 @@ To install Ironchip Windows Logon into your device:
      <img alt="Additional Configuration view" src="./assets/additional-configuration-view.png" width="350"/>
    </p>
 
- 6) On this view, you can select in which scenarios you want Ironchip credential provider to be applied.
+ 7) On this view, you can select in which scenarios you want Ironchip credential provider to be applied.
   
     #### Scenarios
       - **Logon:** Scenario to access the workstation either using logon or unlock.
@@ -133,7 +141,7 @@ To install Ironchip Windows Logon into your device:
      <img alt="Additional Configuration view" src="./assets/scenarios-view.png" width="350"/>
    </p>
 
-  7) Finally, click the Install button to complete the setup.
+  8) Finally, click the Install button to complete the setup.
 
    <p align="center">
      <img alt="Install view" src="./assets/install-view.png" width="350"/>
@@ -224,11 +232,29 @@ The installation of Ironchip Windows Logon using commands (cmd) with the program
      <img alt="Dashboard applications navigation" src="./assets/dashboard-applications.png" width="350"/>
    </p>
 
-3) Click on the **Options** button and select **Add Access** and a new modal will be displayed. Fill the fields in each step.
+3) Search for the application you want to give access. 
+
+4) Click on the **Options** button and select **Add Access**. A new modal should show up.
+
+5) **Step 1:** Select the group you want to apply the access condition.
    <p align="center">
-     <img alt="Dashboard new application modal" src="./assets/add-access.png" width="350"/>
+     <img alt="Dashboard new access modal" src="./assets/group-selection-modal.png" width="350"/>
    </p>
-> As a username, setup the same value the user will use to login into the Windows device.
+  > To create new groups go to `Directory > Group`
+
+6) **Step 2:** By default, the Ironchip credential provider handles all logins using the SAMAccount format (e.g., `Domain\User` or `Machine\User`). taking that into account, just add the according template.
+
+   <p align="center">
+     <img alt="Dashboard new access modal" src="./assets/access-template-modal.png" width="350"/>
+   </p>
+
+  > [How to allow users to login using other formats.](https://github.com/Ironchip-Security/Ironchip-Windows-Logon?tab=readme-ov-file#enforce-external-username)
+
+7) **Step 3:** Select the access condition you want to apply to this access.
+
+   <p align="center">
+     <img alt="Dashboard new application modal" src="./assets/select-access-condition-modal.png" width="350"/>
+   </p>
 
 ## Additional configurations
 
@@ -305,8 +331,8 @@ With this setup, the authorization to the Ironchip backend still uses the SAMAcc
      <img alt="Configure alias" src="./assets/configure-alias.png" width="550"/>
    </p>
 
-## Compatibility with Older Versions
-Starting from `v2.2.0`, communications have been migrated from *Schannel* to *OpenSSL*, improving compatibility with older Windows versions (primarily targeting Windows 8, though not limited to it).
+## Open SSL
+Starting from `v2.2.0`, communications have been migrated from *Schannel* to *OpenSSL*, improving compatibility with older Windows versions (primarily targeting Windows 8, though not limited to it) while ensuring TLS 1.3.
 
 However, since our backend uses an SSL certificate signed by **Let’s Encrypt**, and Let’s Encrypt’s root certificate was **not included in Windows default trusted CA store until Windows 10**, users running earlier versions of Windows will need to manually add the Let’s Encrypt root certificate to their trusted certificate authorities.
 
