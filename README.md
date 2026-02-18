@@ -334,12 +334,12 @@ With this setup, the authorization to the Ironchip backend still uses the SAMAcc
 ## Open SSL
 Starting from `v2.2.0`, communications have been migrated from *Schannel* to *OpenSSL*, improving compatibility with older Windows versions (primarily targeting Windows 8, though not limited to it) while ensuring TLS 1.3.
 
-However, since our backend uses an SSL certificate signed by **Let’s Encrypt**, your device must contain **Let’s Encrypt’s as a trusted CA**. If your device doesn't already contains it as a trusted CA, you will need to manually add the Let’s Encrypt root certificate to your device trusted certificate authorities.
+However, since our backend uses an SSL certificate signed by **Let’s Encrypt**, your device must contain **Let’s Encrypt’s as a trusted CA**. If your device doesn't already contains it as a trusted CA, you will need to manually add the Let’s Encrypt root certificate (**ISRG Root X1**) to your device trusted certificate authorities.
 
 You can download the required Let’s Encrypt root certificate in their [Documentation](https://letsencrypt.org/certificates/).
 
 <p align="left">
-  <a href="https://github.com/Ironchip-Security/Ironchip-Windows-Logon/blob/main/assets/windows8-cert-install.mp4">
+  <a href="https://raw.githubusercontent.com/Ironchip-Security/Ironchip-Windows-Logon/main/assets/windows8-cert-install.mp4">
     <img alt="Download a video for a more detailed guide on how to download the certificate" src="https://custom-icon-badges.demolab.com/badge/-Download%20Certificate%20Video%20Guide-blue?style=for-the-badge&logo=download&logoColor=white">
   </a>
 </p>
